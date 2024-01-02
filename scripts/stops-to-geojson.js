@@ -1,8 +1,8 @@
 import csv from 'csvtojson'
 import fs from 'fs'
 
-(async() => {
-    let stops = await csv().fromFile(`./data/google_transit/stops.txt`)
+(async () => {
+    let stops = await csv().fromFile(`../data/google_transit/stops.txt`)
 
     // filter out suffixes 
     stops = stops.filter(d => !d.stop_id.match(/(N|S)$/))
@@ -24,5 +24,5 @@ import fs from 'fs'
         })
     }
 
-    fs.writeFileSync('./data/stops.geojson', JSON.stringify(FC))
+    fs.writeFileSync('../data/stops.geojson', JSON.stringify(FC))
 })()

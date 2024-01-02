@@ -7,7 +7,7 @@ import turfIntersect from '@turf/intersect'
 import flatten from 'geojson-flatten'
 import fs from 'fs'
 
-import nycShorelineClip from './data/nyc-shoreline-clip-multi.json' assert { type: 'json' };
+import nycShorelineClip from '../data/nyc-shoreline-clip-multi.json' assert { type: 'json' };
 
 
 const intersectWithShoreline = (FC) => {
@@ -20,8 +20,8 @@ const intersectWithShoreline = (FC) => {
                 if (intersection) {
                     clippedFeature = intersection
                 }
-    
-            } catch(e) {}
+
+            } catch (e) { }
             return clippedFeature
         })
     })
@@ -31,7 +31,7 @@ export const isochroneFromDuration = async (stop_id) => {
     console.log(`processing ${stop_id}`)
     return new Promise(async (resolve, reject) => {
         // Async / await usage
-        const jsonArray = await(await csv().fromFile(`./data/durations/${stop_id}.csv`)).map((d) => {
+        const jsonArray = await (await csv().fromFile(`../data/durations/${stop_id}.csv`)).map((d) => {
             return {
                 ...d,
                 stop_lon: parseFloat(d.stop_lon),
@@ -163,7 +163,7 @@ export const isochroneFromDuration = async (stop_id) => {
         var options = { precision: 5, coordinates: 2 };
         const truncatedFC = turfTruncate(consolidatedFC, options);
 
-        fs.writeFileSync(`./data/isochrones/${stop_id}.geojson`, JSON.stringify(truncatedFC))
+        fs.writeFileSync(`../data/isochrones/${stop_id}.geojson`, JSON.stringify(truncatedFC))
         resolve()
     })
 
@@ -172,7 +172,7 @@ export const isochroneFromDuration = async (stop_id) => {
 
 (async () => {
 
-    const csvFilenames = await fs.readdirSync('./data/durations').map(d => d.split('.')[0])
+    const csvFilenames = await fs.readdirSync('../data/durations').map(d => d.split('.')[0])
 
     for (let i = 0; i < csvFilenames.length; i++) {
         await isochroneFromDuration(csvFilenames[i])
