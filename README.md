@@ -10,7 +10,7 @@ Scripts (nodejs and R) for generating travel time isochrones from stations in th
 
 2. Run `Rscript caclulate-station-times.R`, which outputs a file `{stop_id}.csv` for each stop in the GTFS data. Each output file contains the travel times to each other station in the system for a given `stop_id`.
 
-3. Run `node trip-times-to-isocrhone.js`, which converts each of the travel times CSVs generated in step 2 into a geojson FeatureCollection containing 10, 20, 30, and 40 minute isocrones.
+3. Run `node trip-times-to-isochrone.js`, which converts each of the travel times CSVs generated in step 2 into a geojson FeatureCollection containing 10, 20, 30, and 40 minute isocrones.
 
 ## Isochrone Creation Algorithm
 
