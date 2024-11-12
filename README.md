@@ -1,6 +1,6 @@
 # Modifications
 
-`trip-times-to-isochrone.js` now takes in realtime subway data from a range of percentiles (10, 25, 50, 75, 90) and the mean. This is processed in vukevint/housing-nyc, with data from 2024-01 to 2024-02 (to be edited with specific days). Original durations and isochrones in `data/` is now suffixed with `_google`. A qgis implementation of geojson is available for visualization during development.
+`trip-times-to-isochrone.js` now takes in realtime subway data from a range of percentiles (10, 25, 50, 75, 90) and the mean. This is processed in another package based on [toddwschneider/nyc-subway-data](https://github.com/toddwschneider/nyc-subway-data), with data from 2024-01 to 2024-02 (to be edited with specific days). Original durations and isochrones in `data/` is now suffixed with `_google`. A qgis implementation of geojson is available for visualization during development.
 
 # nyc-subway-isochrones
 

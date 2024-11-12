@@ -173,7 +173,7 @@ export const isochroneFromDuration = async (stop_id, weight) => {
 
 (async () => {
 
-    const weights = ['pct10', 'pct25', 'pct50', 'pct75', 'pct90', 'mean'];
+    const weights = ['pct10', 'pct25', 'pct50', 'pct75', 'pct90', 'mean', 'google'];
 
     for (const weight of tqdm(weights)) {
         const csvFilenames = await fs.readdirSync(`../data/durations_${weight}`).map(d => d.split('.')[0])
