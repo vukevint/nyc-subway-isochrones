@@ -1,3 +1,3 @@
-import { isochroneFromDuration } from "./trip-times-to-isocrhone.js";
+import { isochroneFromDuration } from "./trip-times-to-isochrone.js";
 
 isochroneFromDuration('H06')
